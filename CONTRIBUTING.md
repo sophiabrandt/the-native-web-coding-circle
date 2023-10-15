@@ -16,7 +16,7 @@ By contributing to sophiabrandt/coding-cirle, you agree that your contributions 
 
 ### Reporting Bugs
 
-1. Check the [Issues](https://github.com/sophiabrandt/coding-circle/issues) to see if your issue has already been reported.
+1. Check the [Issues](https://github.com/sophiabrandt/the-native-web-coding-circle/issues) to see if your issue has already been reported.
 2. Open a new issue using the appropriate template.
 
 ### Submitting Pull Requests

@@ -1,4 +1,4 @@
-[coding circle][cc] contains the code for the challenges proposed by the [Youtube Channel thenativeweb.io][cc] (German coding channel). A premium channel membership is required to view the videos.
+[the-native-web-coding-circle][cc] contains the code for the challenges proposed by the [Youtube Channel thenativeweb.io][cc] (German coding channel). A premium channel membership is required to view the videos.
 
 ## Getting started
 
@@ -13,7 +13,7 @@ You can install the necessary dependencies in each folder with `bun i`.
 Example:
 
 ```sh
-cd penultimate-element && bun i
+cd 01-penultimate-element && bun i
 ```
 
 ## Running Tests
@@ -29,12 +29,12 @@ bun test
 Example:
 
 ```sh
-cd penultimate-element && bun test
+cd 01-penultimate-element && bun test
 ```
 
 ## Reporting bugs and contributing code
 
-- Want to report a bug or request a feature? Let me know via [an issue](https://github.com/sophiabrandt/coding-circle/issues/new).
-- Want to help contribute? Check out the [Contributing Guide](https://github.com/sophiabrandt/coding-circle/blob/HEAD/CONTRIBUTING.md).
+- Want to report a bug or request a feature? Let me know via [an issue](https://github.com/sophiabrandt/the-native-web-coding-circle/issues/new).
+- Want to help contribute? Check out the [Contributing Guide](https://github.com/sophiabrandt/the-native-web-coding-circle/blob/HEAD/CONTRIBUTING.md).
 
 [cc]: https://www.youtube.com/post/UgkxG-fZQxHQ144TvZQjo3IugUqy6jOyopel
