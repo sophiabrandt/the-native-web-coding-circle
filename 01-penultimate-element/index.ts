@@ -45,7 +45,7 @@ export class List<T> {
 
   removeNthElementFromEndOfList(n: number): void {
     // if n is greater than the length of the list,
-    // or n is 0,
+    // or n is 0 (remove the last element of a list)
     // do nothing
     if (n > this.size || n === 0) {
       return;
@@ -59,24 +59,22 @@ export class List<T> {
         this.tail = null;
       }
     } else {
-      let lead = this.head;
-      let follow = this.head;
+      let indexToRemove = this.size - n;
+      let currentNode = this.head;
+      let previousNode = null;
 
-      // move the lead pointer
-      for (let i = 0; i < n; i++) {
-        lead = lead?.next ?? null;
+      // traverse until we reach the node to remove
+      for (let i = 0; i < indexToRemove; i++) {
+        previousNode = currentNode;
+        currentNode = currentNode?.next ?? null;
       }
 
-      // move both pointers until lead reaches the end
-      while (lead && lead.next !== null) {
-        lead = lead.next;
-        follow = follow?.next ?? null;
-      }
-
-      // TypeScript does not know that follow.next &
-      // follow.next.next will always exist b/c
-      // of the previous checks ¯\_(ツ)_/¯
-      follow!.next = follow!.next!.next;
+      // remove the node
+      // edge cases were handled previously,
+      // so there should always be a previous
+      // node and a current node with non-null
+      // next pointers
+      previousNode!.next = currentNode!.next;
     }
     this.size--;
   }

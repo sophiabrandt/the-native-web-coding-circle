@@ -96,7 +96,7 @@ describe("Index", () => {
         expect(actual).toEqual(expected);
       });
 
-      it("for 0th element", () => {
+      it("for 0th element from the end of the list", () => {
         const actual: Array<number> = [];
         const expected = [8, 1];
 
