@@ -1,10 +1,10 @@
-# Contributing to sophiabrandt/coding-cirle
+# Contributing to sophiabrandt/the-native-web-coding-circle
 
 This document outlines the contribution process and what I am looking for in contributions.
 
 ## License
 
-By contributing to sophiabrandt/coding-cirle, you agree that your contributions will be licensed under the MIT license.
+By contributing to sophiabrandt/the-native-web-coding-circle, you agree that your contributions will be licensed under the MIT license.
 
 ## How to Contribute
 
@@ -37,4 +37,4 @@ By contributing to sophiabrandt/coding-cirle, you agree that your contributions 
 
 If you have questions, feel free to ask them in your pull request.
 
-Thank you for contributing to sophiabrandt/coding-cirle!
+Thank you for contributing to sophiabrandt/the-native-web-coding-circle!
