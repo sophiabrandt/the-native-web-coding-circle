@@ -3,15 +3,6 @@ export interface INode<T> {
   next: INode<T> | null;
 }
 
-export interface SinglyLinkedList<T> {
-  head: INode<T> | null;
-  tail: INode<T> | null;
-  append(value: T): void;
-  traverse(callback: (value: T) => void): void;
-  removeNthElementFromEndOfList(n: number): void;
-  size: number;
-}
-
 export class Node<T> implements INode<T> {
   readonly next: INode<T> | null;
   constructor(readonly value: T) {
@@ -19,7 +10,7 @@ export class Node<T> implements INode<T> {
   }
 }
 
-export class List<T> implements SinglyLinkedList<T> {
+export class List<T> {
   head: INode<T> | null = null;
   tail: INode<T> | null = null;
   size: number = 0;
@@ -73,9 +64,7 @@ export class List<T> implements SinglyLinkedList<T> {
 
       // move the lead pointer
       for (let i = 0; i < n; i++) {
-        if (lead !== null) {
-          lead = lead.next;
-        }
+        lead = lead?.next ?? null;
       }
 
       // move both pointers until lead reaches the end
@@ -84,9 +73,10 @@ export class List<T> implements SinglyLinkedList<T> {
         follow = follow?.next ?? null;
       }
 
-      if (follow && follow.next) {
-        follow.next = follow.next.next;
-      }
+      // TypeScript does not know that follow.next &
+      // follow.next.next will always exist b/c
+      // of the previous checks ¯\_(ツ)_/¯
+      follow!.next = follow!.next!.next;
     }
     this.size--;
   }
