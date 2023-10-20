@@ -10,7 +10,8 @@ export function calculateRunningMedian(arr: number[]) {
     medians: number[] = [];
 
   for (const item of arr) {
-    binaryInsert(window, item);
+    window.push(item);
+    window.sort((a, b) => a - b);
     let windowSize = window.length;
 
     const left = window[Math.floor((windowSize - 1) / 2)];
@@ -18,27 +19,4 @@ export function calculateRunningMedian(arr: number[]) {
     medians.push((left + right) / 2);
   }
   return medians;
-}
-
-function binaryInsert(arr: number[], value: number) {
-  let start = 0;
-  let end = arr.length - 1;
-
-  while (start <= end) {
-    const mid = Math.floor((start + end) / 2);
-
-    if (arr[mid] === value) {
-      arr.splice(mid, 0, value);
-      return;
-    }
-
-    if (arr[mid] < value) {
-      start = mid + 1;
-    } else {
-      end = mid - 1;
-    }
-  }
-
-  // 'start' now points to where the new element should be inserted.
-  arr.splice(start, 0, value);
 }
