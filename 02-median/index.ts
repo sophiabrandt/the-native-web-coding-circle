@@ -6,25 +6,16 @@ into a sorted array which makes this function O(n log n).
 ( ͡° ʖ̯ ͡°)
 */
 export function calculateRunningMedian(arr: number[]) {
-  let windowStart = 0,
-    window: number[] = [],
+  let window: number[] = [],
     medians: number[] = [];
-  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-    // add the next element to the window
-    binaryInsert(window, arr[windowEnd]);
-    let windowSize = windowEnd - windowStart + 1;
 
-    // calculate the average of the two middle numbers
-    // for a number of even elements in the window
-    if (windowSize % 2 == 0) {
-      const left = window[windowSize / 2 - 1];
-      const right = window[windowSize / 2];
-      medians.push((left + right) / 2);
-    } else {
-      // take the middle number
-      const mid = window[Math.floor(windowSize / 2)];
-      medians.push(mid);
-    }
+  for (const item of arr) {
+    binaryInsert(window, item);
+    let windowSize = window.length;
+
+    const left = window[Math.floor((windowSize - 1) / 2)];
+    const right = window[Math.ceil((windowSize - 1) / 2)];
+    medians.push((left + right) / 2);
   }
   return medians;
 }
